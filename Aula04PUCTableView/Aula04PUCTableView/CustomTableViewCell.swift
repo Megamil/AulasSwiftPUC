@@ -13,6 +13,4 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblNum: UILabel!
 
-
-
 }

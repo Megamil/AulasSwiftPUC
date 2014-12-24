@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
+    var numeros = ["UM","DOIS","TRÊS","QUATRO","CINCO","SEIS","SETE","OITO","NOVE","DEZ","ONZE","DOIS... ZOEIRA"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,13 +24,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)as CustomTableViewCell
-        cell.lblNum.text = "Numeração"
-        cell.lblDesc.text = "Conteúdo"
+        //cell.lblDesc.text = "COMENTÁRIO"
+        cell.lblDesc.text = numeros[indexPath.row]
+        cell.lblNum.text = String(indexPath.row + 1)
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+        //return 10
+        return numeros.count
     }
 
 
