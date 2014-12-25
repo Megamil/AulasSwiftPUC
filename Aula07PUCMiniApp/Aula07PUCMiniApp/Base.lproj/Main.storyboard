@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BDk-dY-UjC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Produtos-->
@@ -59,12 +60,49 @@
                     <view key="view" contentMode="scaleToFill" id="x3W-8t-Swx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uQ-Gw-JZl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-L7-f50">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UNn-L7-f50" firstAttribute="centerY" secondItem="3uQ-Gw-JZl" secondAttribute="centerY" id="9YU-oM-l65"/>
+                                    <constraint firstItem="UNn-L7-f50" firstAttribute="centerX" secondItem="3uQ-Gw-JZl" secondAttribute="centerX" id="F8o-Cz-Q5m"/>
+                                    <constraint firstItem="UNn-L7-f50" firstAttribute="top" secondItem="3uQ-Gw-JZl" secondAttribute="top" id="H7V-up-5SR"/>
+                                    <constraint firstAttribute="bottom" secondItem="UNn-L7-f50" secondAttribute="bottom" id="aEZ-wx-UzM"/>
+                                    <constraint firstAttribute="trailing" secondItem="UNn-L7-f50" secondAttribute="trailing" id="ceh-Gj-Lj6"/>
+                                    <constraint firstItem="UNn-L7-f50" firstAttribute="leading" secondItem="3uQ-Gw-JZl" secondAttribute="leading" id="k0c-R8-twH"/>
+                                </constraints>
+                            </scrollView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cup-A7-njg">
+                                <rect key="frame" x="23" y="562" width="441" height="31"/>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-db-S0s">
+                                <rect key="frame" x="523" y="562" width="51" height="31"/>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s3u-db-S0s" firstAttribute="top" secondItem="3uQ-Gw-JZl" secondAttribute="bottom" constant="8" id="1lW-mN-S1R"/>
+                            <constraint firstItem="s3u-db-S0s" firstAttribute="leading" secondItem="Cup-A7-njg" secondAttribute="trailing" constant="61" id="29G-Bl-ud9"/>
+                            <constraint firstItem="vMh-bc-HJd" firstAttribute="top" secondItem="s3u-db-S0s" secondAttribute="bottom" constant="7" id="4XF-Pw-iui"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s3u-db-S0s" secondAttribute="trailing" constant="12" id="9md-SX-Ha2"/>
+                            <constraint firstItem="3uQ-Gw-JZl" firstAttribute="top" secondItem="x3W-8t-Swx" secondAttribute="topMargin" id="RJh-lX-EU8"/>
+                            <constraint firstItem="Cup-A7-njg" firstAttribute="top" secondItem="3uQ-Gw-JZl" secondAttribute="bottom" constant="8" id="YYE-oS-JxM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3uQ-Gw-JZl" secondAttribute="trailing" constant="-16" id="gVz-T9-F9a"/>
+                            <constraint firstItem="vMh-bc-HJd" firstAttribute="top" secondItem="Cup-A7-njg" secondAttribute="bottom" constant="8" id="iTF-XW-saF"/>
+                            <constraint firstItem="s3u-db-S0s" firstAttribute="top" secondItem="3uQ-Gw-JZl" secondAttribute="bottom" constant="8" id="jsA-A0-UP8"/>
+                            <constraint firstItem="3uQ-Gw-JZl" firstAttribute="leading" secondItem="x3W-8t-Swx" secondAttribute="leadingMargin" constant="-16" id="ovw-co-kdl"/>
+                            <constraint firstItem="Cup-A7-njg" firstAttribute="leading" secondItem="x3W-8t-Swx" secondAttribute="leadingMargin" constant="9" id="xBd-0e-R3i"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCg-kz-ODa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2053" y="454"/>
+            <point key="canvasLocation" x="2100" y="454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SHO-eM-vgx">
