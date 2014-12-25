@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1377" y="454"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="EDd-Ee-VLB">
             <objects>
-                <viewController id="Jbf-0g-njN" sceneMemberID="viewController">
+                <viewController id="Jbf-0g-njN" customClass="DetailViewController" customModule="Aula07PUCMiniApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v45-mu-N3b"/>
                         <viewControllerLayoutGuide type="bottom" id="vMh-bc-HJd"/>
