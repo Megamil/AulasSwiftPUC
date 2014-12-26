@@ -64,7 +64,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uQ-Gw-JZl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-L7-f50">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UNn-L7-f50">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
                                     </imageView>
                                 </subviews>
@@ -72,16 +72,27 @@
                                     <constraint firstItem="UNn-L7-f50" firstAttribute="centerY" secondItem="3uQ-Gw-JZl" secondAttribute="centerY" id="9YU-oM-l65"/>
                                     <constraint firstItem="UNn-L7-f50" firstAttribute="centerX" secondItem="3uQ-Gw-JZl" secondAttribute="centerX" id="F8o-Cz-Q5m"/>
                                     <constraint firstItem="UNn-L7-f50" firstAttribute="top" secondItem="3uQ-Gw-JZl" secondAttribute="top" id="H7V-up-5SR"/>
+                                    <constraint firstItem="UNn-L7-f50" firstAttribute="top" secondItem="3uQ-Gw-JZl" secondAttribute="top" id="Oyi-TL-3O0"/>
                                     <constraint firstAttribute="bottom" secondItem="UNn-L7-f50" secondAttribute="bottom" id="aEZ-wx-UzM"/>
                                     <constraint firstAttribute="trailing" secondItem="UNn-L7-f50" secondAttribute="trailing" id="ceh-Gj-Lj6"/>
+                                    <constraint firstItem="UNn-L7-f50" firstAttribute="leading" secondItem="3uQ-Gw-JZl" secondAttribute="leading" id="fFL-v6-ff1"/>
                                     <constraint firstItem="UNn-L7-f50" firstAttribute="leading" secondItem="3uQ-Gw-JZl" secondAttribute="leading" id="k0c-R8-twH"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Jbf-0g-njN" id="0bu-7H-TCX"/>
+                                </connections>
                             </scrollView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cup-A7-njg">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="Cup-A7-njg">
                                 <rect key="frame" x="23" y="562" width="441" height="31"/>
+                                <connections>
+                                    <action selector="changeValue:" destination="Jbf-0g-njN" eventType="valueChanged" id="4HJ-Lm-qOP"/>
+                                </connections>
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3u-db-S0s">
                                 <rect key="frame" x="523" y="562" width="51" height="31"/>
+                                <connections>
+                                    <action selector="turnOnOff:" destination="Jbf-0g-njN" eventType="valueChanged" id="A3b-pt-ogb"/>
+                                </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,6 +110,12 @@
                             <constraint firstItem="Cup-A7-njg" firstAttribute="leading" secondItem="x3W-8t-Swx" secondAttribute="leadingMargin" constant="9" id="xBd-0e-R3i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="UNn-L7-f50" id="Fkd-Fw-b23"/>
+                        <outlet property="onOffZoom" destination="s3u-db-S0s" id="s2H-Cf-fcw"/>
+                        <outlet property="scrollView" destination="3uQ-Gw-JZl" id="jBE-A7-Mkw"/>
+                        <outlet property="sliderView" destination="Cup-A7-njg" id="xQ9-DC-utz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCg-kz-ODa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

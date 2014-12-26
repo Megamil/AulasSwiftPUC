@@ -32,6 +32,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imagesArray.count
     }
+    
+    //É executado antes da Storyboard e já prepara a proxima view controller com os objetos e variáveis necessárias.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var dtVC = segue.destinationViewController as DetailViewController
+        
+        let idxPath = tableView.indexPathForCell(sender as UITableViewCell) as NSIndexPath?
+        
+        dtVC.imgSelected = imagesArray[idxPath!.row].image
+    }
 
 }
 
